@@ -1,0 +1,19 @@
+"VertexLitGeneric"
+{
+	"$baseTexture" "models\weapons\v_rocketlauncher_pf2/ammo_box1"
+	"$selfillum" "1"
+
+
+	// Use separate self-illum mask on Pre DX9 hardware
+	">=DX90"
+	{
+		"$baseTexture" 		"models\weapons\v_rocketlauncher_pf2/ammo_box1_noalpha"
+		"$selfillummask" 	"models\weapons\v_rocketlauncher_pf2/item_selfillum"
+	}
+
+	// Use redundant self-illum in base alpha on Pre DX9 hardware
+	"<DX90"
+	{
+		"$baseTexture" 	"models\weapons\v_rocketlauncher_pf2/ammo_box1"
+	}
+}

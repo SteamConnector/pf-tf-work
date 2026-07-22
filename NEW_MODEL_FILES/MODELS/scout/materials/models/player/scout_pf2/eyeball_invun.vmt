@@ -1,0 +1,6 @@
+"UnLitGeneric"
+{
+	"$basetexture"	"scout_pf2/eyeball_invun"
+	"$surfaceprop"	"flesh"
+	"$model"		1
+}

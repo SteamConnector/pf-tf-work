@@ -1,0 +1,14 @@
+"VertexLitGeneric"
+{
+	"$basetexture"	"models/player/demo_pf2/demoman_red_gib"
+	"$surfaceprop"	"flesh"
+	"$bumpmap" "models\player\demo_pf2\demoman_normal"
+
+	"$phong" "1"
+	"$phongexponenttexture"  "models/player/demo_pf2/demoman_exponent"
+	"$phongboost" ".5"	
+	"$lightwarptexture" "demo_pf2/pyro_lightwarp"
+	"$phongfresnelranges"	"[1 10 20]"
+	"$halflambert" "1"
+	
+}

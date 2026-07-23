@@ -1,45 +1,5 @@
 // ---------------------------------------------------------------
 // soldier.qc -- PF2C Soldier ported onto modern TF2's animation system
-//
-// SOURCE OF TRUTH = PF2C (soldier_pf.qc): mesh, eyeball position, flex
-// (flexfile/flexcontrollers/expressions), bodygroups, texturegroup,
-// material paths, attachments, hitboxes, bones, poseparameters,
-// ikchains, ragdoll physics + gibs. All verbatim from PF2C.
-//
-// PF2C's skeleton already matches retail TF2's -- verified directly:
-// all 86 $definebone / 24 $attachment / 38 $bonemerge / 18 $hbox entries
-// agree with soldier_tf.qc to float noise (5th-6th decimal). No rig
-// swap needed or performed.
-//
-// TAKEN FROM MODERN TF2 (soldier_tf.qc) -- animation compatibility only:
-//   $weightlist "weights_user_ref" + the full $declaresequence table +
-//   3x $includemodel. PF2C's own QC has neither -- it only includes one
-//   generic animation package with no named sequences declared. Without
-//   this block, retail-specific taunts/gestures/reload/attack sequences
-//   have nothing to resolve against, so the model won't move like
-//   retail Soldier. This is the one substitution with a technical
-//   requirement behind it.
-//
-// BODYGROUPS: PF2C's own only -- rocket (2-state), hat (1-state, as
-// PF2C actually has it). No medal/grenades, no 2nd hat state: neither
-// decompile contains real content for these. TF2 calling SetBodygroup
-// on a name this model doesn't have is a silent no-op, not an error.
-//
-// $cdmaterials: both player and weapon paths localized to this model
-// (models\player\soldier_pf2\, models\weapons\v_rocketlauncher_pf2\)
-// so nothing here collides with base TF2/FC's own soldier or rocket
-// launcher content at the stock paths. Items path (soldier cosmetics,
-// currently unused/empty either way) left untouched.
-//
-// Compiles to player/soldier_pf2c.mdl, not player/soldier.mdl, for the
-// same reason -- doesn't overwrite/collide with the base game's model.
-//
-// STILL REQUIRED, NOT INCLUDED IN THIS FOLDER (see MANIFEST.txt):
-//   player/soldier_user_animations.mdl
-//   player/soldier_animations.mdl
-//   workshop/player/animations/soldier_workshop_animations.mdl
-//   These are compiled retail data, not present in either decompile --
-//   pull them from a live TF2 install's models/player/.
 // ---------------------------------------------------------------
 
 $modelname "player/soldier_pf2c.mdl"
@@ -189,6 +149,12 @@ $bodygroup "rocket"
 $bodygroup "hat"
 {
 	studio "soldier_hat_bodygroup.smd"
+	blank
+}
+$bodygroup "grenades"
+{
+	blank
+	blank
 }
 
 
